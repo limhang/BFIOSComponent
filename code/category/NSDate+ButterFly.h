@@ -2,7 +2,7 @@
 
 #import <Foundation/Foundation.h>
 
-@interface NSData (ButterFly)
+@interface NSDate (ButterFly)
 /**
  *  [YYYY--MM--DD]格式的字符串转 NSDate 类型
  *
@@ -22,6 +22,27 @@
 + (NSString *)dateToString: (NSDate *)date;
 
 +(NSDate *)getNowDateFromatAnDate:(NSDate *)anyDate;
+
+/**
+ *  NSDate 获取xx日期往前/往后多少个月是什么日期
+ *
+ *  @param NSData data 比较的日期
+ *
+ *  @param int month 往前/往后推算多少个月 -- 负数是往后，正数是往前
+ *
+ *  @return NSData 返回的推算的日期
+ */
++(NSDate *)getPriousDateFromDate:(NSDate *)date withMonth:(int)month;
+
+/**
+ *  后台返回的日期需要加8个小时
+ *
+ *  @param NSData data 等待处理的时间
+ *
+ *  @return NSString 处理完成返回的时间字符串
+ */
++(NSString *)UTCEgihtHoursFromNowData:(NSDate *)date;
+
 @end
 
 //使用说明：
